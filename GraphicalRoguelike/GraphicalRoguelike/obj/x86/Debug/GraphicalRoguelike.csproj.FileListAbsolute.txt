@@ -1,0 +1,8 @@
+C:\Users\Samuel\Documents\Visual Studio 2010\Projects\GraphicalRoguelike\GraphicalRoguelike\GraphicalRoguelike\bin\x86\Debug\Content\Floor.xnb
+C:\Users\Samuel\Documents\Visual Studio 2010\Projects\GraphicalRoguelike\GraphicalRoguelike\GraphicalRoguelike\bin\x86\Debug\GraphicalRoguelike.exe
+C:\Users\Samuel\Documents\Visual Studio 2010\Projects\GraphicalRoguelike\GraphicalRoguelike\GraphicalRoguelike\bin\x86\Debug\GraphicalRoguelike.pdb
+C:\Users\Samuel\Documents\Visual Studio 2010\Projects\GraphicalRoguelike\GraphicalRoguelike\GraphicalRoguelike\obj\x86\Debug\GraphicalRoguelike.csprojResolveAssemblyReference.cache
+C:\Users\Samuel\Documents\Visual Studio 2010\Projects\GraphicalRoguelike\GraphicalRoguelike\GraphicalRoguelike\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Samuel\Documents\Visual Studio 2010\Projects\GraphicalRoguelike\GraphicalRoguelike\GraphicalRoguelike\obj\x86\Debug\GraphicalRoguelike.exe
+C:\Users\Samuel\Documents\Visual Studio 2010\Projects\GraphicalRoguelike\GraphicalRoguelike\GraphicalRoguelike\obj\x86\Debug\GraphicalRoguelike.pdb
+C:\Users\Samuel\Documents\Visual Studio 2010\Projects\GraphicalRoguelike\GraphicalRoguelike\GraphicalRoguelike\bin\x86\Debug\Content\NormalText.xnb

@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C# Express 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphicalRoguelike", "GraphicalRoguelike\GraphicalRoguelike\GraphicalRoguelike.csproj", "{68F54EEF-CC65-4101-AB9C-E7610AD9769E}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "GraphicalRoguelikeContent", "GraphicalRoguelike\GraphicalRoguelikeContent\GraphicalRoguelikeContent.contentproj", "{A5DE3504-D125-40CE-A748-F2525FE4FE20}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{68F54EEF-CC65-4101-AB9C-E7610AD9769E}.Debug|x86.ActiveCfg = Debug|x86
+		{68F54EEF-CC65-4101-AB9C-E7610AD9769E}.Debug|x86.Build.0 = Debug|x86
+		{68F54EEF-CC65-4101-AB9C-E7610AD9769E}.Release|x86.ActiveCfg = Release|x86
+		{68F54EEF-CC65-4101-AB9C-E7610AD9769E}.Release|x86.Build.0 = Release|x86
+		{A5DE3504-D125-40CE-A748-F2525FE4FE20}.Debug|x86.ActiveCfg = Debug|x86
+		{A5DE3504-D125-40CE-A748-F2525FE4FE20}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
