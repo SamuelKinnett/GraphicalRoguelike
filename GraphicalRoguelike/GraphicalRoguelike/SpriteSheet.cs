@@ -51,7 +51,7 @@ namespace GraphicalRoguelike
 
             //Draw the tile to the screen
             spriteBatch.Begin();
-            if (scale == null)
+            if (scale == 1)
             {
                 spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, color);
             }

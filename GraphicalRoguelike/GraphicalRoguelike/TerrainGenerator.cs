@@ -15,7 +15,7 @@ namespace GraphicalRoguelike
         /// </summary>
         public int[,] GenerateWorld(int worldWidth, int worldHeight, string worldName)
         {
-            int[,] heightMap = new int[worldWidth, worldHeight]; //this array stores the height of each chunk. 0 = bedrock layer, 1 - 3 = ocean, 4 - 11 = hills/land, 12 - 15 = mountains
+            int[,] heightMap = new int[worldWidth, worldHeight]; //this array stores the height of each chunk. 0 = bedrock layer, 1 - 8 = ocean, 9 - 31 = land
             int[,] temporaryMap = new int[worldWidth, worldHeight]; //this array is used in the generation process to create the layer before it is applied to the heightmap
             int[,] cellularMap = new int[worldWidth, worldHeight]; //this array is used in the cellular automata stage of generation;
 
@@ -24,7 +24,7 @@ namespace GraphicalRoguelike
             Random rand = new Random();
 
             //fileManager.CreateWorldFolder(worldName);
-            double landChance = 0.8;
+            double landChance = 0.76;
 
             //fill the heightmap with bedrock (lowest layer)
             for (int y = 0; y < worldHeight; y++)
@@ -35,7 +35,7 @@ namespace GraphicalRoguelike
                 }
             }
 
-            for (int currentHeightLevel = 1; currentHeightLevel < 15; currentHeightLevel++) //for each height level
+            for (int currentHeightLevel = 1; currentHeightLevel < 32; currentHeightLevel++) //for each height level
             {
                 //clear the arrays of their previous contents
                 Array.Clear(temporaryMap, 0, temporaryMap.Length);
@@ -52,9 +52,10 @@ namespace GraphicalRoguelike
                     }
                 }
 
-                //then, simulate a 4-5 rule cellular automata 5 times.
+                //then, simulate a 4-5 rule cellular automata 7 times.
+                //for the first 4 times, fill in areas with less than 2 neighbours
 
-                for (int generation = 0; generation < 4; generation++)
+                for (int generation = 0; generation < 5; generation++)
                 {
                     for (int y = 0; y < worldHeight; y++)
                     {
@@ -107,16 +108,20 @@ namespace GraphicalRoguelike
                             {
                                 cellularMap[x, y] = 1;
                             }
+                            else
+                            {
+                                cellularMap[x, y] = 0;
+                            }
 
                         }
                     }
 
                     Array.Copy(cellularMap, temporaryMap, cellularMap.Length);
-                    Array.Clear(cellularMap, 0, cellularMap.Length);
 
                 }
 
-                landChance -= 0.05; //make the next level more sparse
+                landChance -= 0.01; //make the next level more sparse
+                Array.Clear(cellularMap, 0, cellularMap.Length); //clear the cellular map
 
                 //apply the layer to the heightmap
 

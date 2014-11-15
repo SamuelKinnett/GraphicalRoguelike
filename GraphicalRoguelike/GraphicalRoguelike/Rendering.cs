@@ -22,23 +22,20 @@ namespace GraphicalRoguelike
             {
                 for (int x = 0; x < worldWidth; x++)
                 {
-                    switch (worldMap[x, y])
+                    int temp = worldMap[x, y];
+                    color = Color.Black;
+
+                    if (temp < 9)
                     {
-                        case 0:
-                            color = new Color(0, 0, 140);
-                            break;
-                        case 1:
-                            color = new Color(0, 0, 180);
-                            break;
-                        case 2:
-                            color = new Color(0, 0, 220);
-                            break;
-                        default:
-                            color = new Color(0, (worldMap[x, y]) * 10, 0);
-                            break;
+                        color = new Color(temp * 2, temp * 2, temp * 20 + 110);
+                    }
+                    else
+                    {
+                        color = new Color(0, temp * 8, 0);
                     }
 
-                    spriteSheet.Draw(spriteBatch, new Vector2((x * 8) + 20, (y * 8) + 20), 38, color, (float)0.5);
+                    spriteSheet.Draw(spriteBatch, new Vector2((x * 4) + 20, (y * 4) + 20), 38, color, (float)0.25);
+
                 }
             }
         }

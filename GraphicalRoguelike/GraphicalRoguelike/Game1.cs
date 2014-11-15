@@ -26,6 +26,9 @@ namespace GraphicalRoguelike
         Texture2D floor;    //Normal floor tiles
         public int[,] worldMap;
 
+        const int testWorldSize = 100; //TESTING
+        double worldGenerationTime = 0; //TESTING
+
         enum GameState
         {
             SplashScreen,
@@ -48,7 +51,7 @@ namespace GraphicalRoguelike
             graphics.ApplyChanges();
 
             //set window title
-            this.Window.Title = "Cellular Automata Map Generation & Dynamic Scaling";
+            this.Window.Title = "Cellular Automata Map Generation";
         }
 
         /// <summary>
@@ -60,7 +63,7 @@ namespace GraphicalRoguelike
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            worldMap = new int[40, 40];
+            worldMap = new int[testWorldSize, testWorldSize];
 
             terrainGenerator = new TerrainGenerator();
             renderer = new Rendering();
@@ -81,6 +84,7 @@ namespace GraphicalRoguelike
             OverworldTerrain = new SpriteSheet(floor, 39, 21);
 
             font = this.Content.Load<SpriteFont>("NormalText");
+
             // TODO: use this.Content to load your game content here
         }
 
@@ -112,16 +116,23 @@ namespace GraphicalRoguelike
                 case GameState.SplashScreen:
                     if (2 - (float)gameTime.TotalGameTime.Seconds <= 0)
                     {
-                        currentGameState = GameState.MainMenu;
+                        currentGameState = GameState.GeneratingWorld;
                     }
                     break;
 
-                case GameState.MainMenu:
+                case GameState.GeneratingWorld:
 
                     //testing purposes
-                    Array.Copy(terrainGenerator.GenerateWorld(40, 40, "TestWorld"), worldMap, worldMap.Length);
-                    currentGameState = GameState.ViewingWorld;
+                    double temp;
+                    double temp2; 
 
+                    temp = gameTime.TotalGameTime.TotalMilliseconds;
+                    Array.Copy(terrainGenerator.GenerateWorld(testWorldSize, testWorldSize, "TestWorld"), worldMap, worldMap.Length);
+                    temp2 = gameTime.TotalGameTime.TotalMilliseconds;
+
+                    worldGenerationTime = (float)temp2 - (float)temp;
+
+                    currentGameState = GameState.ViewingWorld;
                     break;
 
                 case GameState.ViewingWorld:
@@ -167,14 +178,26 @@ namespace GraphicalRoguelike
                     spriteBatch.End();
                     break;
 
+                case(GameState.GeneratingWorld):
+                    GraphicsDevice.Clear(Color.Black);
+                    spriteBatch.Begin();
+                    spriteBatch.DrawString(font, "Generating World...", new Vector2(0, 0), Color.White);
+                    spriteBatch.End();
+                    break;
+
                 case(GameState.ViewingWorld):
-                    renderer.RenderWorld(spriteBatch, OverworldTerrain, 40, 40, worldMap);
+                    GraphicsDevice.Clear(new Color(0, 0, 85));
+                    renderer.RenderWorld(spriteBatch, OverworldTerrain, testWorldSize, testWorldSize, worldMap);
+                    spriteBatch.Begin();
+                    spriteBatch.DrawString(font, "This world was generated in " + worldGenerationTime + " milliseconds.", new Vector2(0, 450), Color.White);
+                    spriteBatch.End();
                     break;
 
                 default:
-                    spriteBatch.Begin();
-                    spriteBatch.DrawString(font, "Something has gone awry", new Vector2(100, 100), Color.Black);
-                    spriteBatch.End();
+                    GraphicsDevice.Clear(Color.Black);
+                    //spriteBatch.Begin();
+                    //spriteBatch.DrawString(font, "Something has gone awry", new Vector2(100, 100), Color.Black);
+                    //spriteBatch.End();
                 break;
 
             }
