@@ -7,7 +7,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Samuel\Documents\Visual Studio 2010\Projects\GraphicalRoguelike\GraphicalRoguelike\GraphicalRoguelike\bin\x86\Debug\Content\Floor.xnb</Output>
+      <Output>C:\Users\Samuel\Documents\GitHub\GraphicalRoguelike\GraphicalRoguelike\GraphicalRoguelike\bin\x86\Debug\Content\Floor.xnb</Output>
       <Time>2014-11-13T17:06:13.6141837+00:00</Time>
     </Item>
     <Item>
@@ -16,7 +16,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Samuel\Documents\Visual Studio 2010\Projects\GraphicalRoguelike\GraphicalRoguelike\GraphicalRoguelike\bin\x86\Debug\Content\NormalText.xnb</Output>
+      <Output>C:\Users\Samuel\Documents\GitHub\GraphicalRoguelike\GraphicalRoguelike\GraphicalRoguelike\bin\x86\Debug\Content\NormalText.xnb</Output>
       <Time>2014-11-14T15:54:15.12039+00:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
@@ -25,10 +25,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Samuel\Documents\Visual Studio 2010\Projects\GraphicalRoguelike\GraphicalRoguelike\GraphicalRoguelikeContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Samuel\Documents\Visual Studio 2010\Projects\GraphicalRoguelike\GraphicalRoguelike\GraphicalRoguelike\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Samuel\Documents\Visual Studio 2010\Projects\GraphicalRoguelike\GraphicalRoguelike\GraphicalRoguelikeContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Samuel\Documents\Visual Studio 2010\Projects\GraphicalRoguelike\GraphicalRoguelike\GraphicalRoguelike\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Samuel\Documents\GitHub\GraphicalRoguelike\GraphicalRoguelike\GraphicalRoguelikeContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Samuel\Documents\GitHub\GraphicalRoguelike\GraphicalRoguelike\GraphicalRoguelike\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Samuel\Documents\GitHub\GraphicalRoguelike\GraphicalRoguelike\GraphicalRoguelikeContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Samuel\Documents\GitHub\GraphicalRoguelike\GraphicalRoguelike\GraphicalRoguelike\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

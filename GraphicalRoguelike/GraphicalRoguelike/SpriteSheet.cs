@@ -7,7 +7,10 @@ using Microsoft.Xna.Framework;
 
 namespace GraphicalRoguelike
 {
-    //this class handles all of the terrain that can be rendered.
+    /// <summary>
+    /// This class adds support for spritesheets. It takes in the number of rows and columns and then
+    /// assigns each sprite in the sheet a number starting from 0, going left to right and top to bottom.
+    /// </summary>
     public class SpriteSheet
     {
         //instance variables
@@ -22,7 +25,7 @@ namespace GraphicalRoguelike
             Columns = columns;
         }
 
-        public void Draw(SpriteBatch spriteBatch, Vector2 location, int textureNumber)
+        public void Draw(SpriteBatch spriteBatch, Vector2 location, int textureNumber, Color color, float scale)
         {
             int width = Texture.Width / Columns;
             int height = Texture.Height / Rows;
@@ -48,10 +51,16 @@ namespace GraphicalRoguelike
 
             //Draw the tile to the screen
             spriteBatch.Begin();
-            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
+            if (scale == null)
+            {
+                spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, color);
+            }
+            else
+            {
+                spriteBatch.Draw(Texture, location, sourceRectangle, color, 0, new Vector2(0, 0), scale, SpriteEffects.None, 0);
+                spriteBatch.Draw(Texture, location, sourceRectangle, color, 0, new Vector2(0, 0), scale, SpriteEffects.None, 0);
+            }
             spriteBatch.End();
         }
-
-
     }
 }

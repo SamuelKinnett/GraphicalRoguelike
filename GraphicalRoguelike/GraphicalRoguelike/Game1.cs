@@ -19,9 +19,12 @@ namespace GraphicalRoguelike
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         SpriteFont font;
+        SpriteSheet OverworldTerrain;   //land, grass etc.
+        TerrainGenerator terrainGenerator;
+        Rendering renderer;
 
         Texture2D floor;    //Normal floor tiles
-        SpriteSheet OverworldTerrain;   //land, grass etc.
+        public int[,] worldMap;
 
         enum GameState
         {
@@ -57,6 +60,10 @@ namespace GraphicalRoguelike
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            worldMap = new int[40, 40];
+
+            terrainGenerator = new TerrainGenerator();
+            renderer = new Rendering();
 
             base.Initialize();
         }
@@ -111,6 +118,14 @@ namespace GraphicalRoguelike
 
                 case GameState.MainMenu:
 
+                    //testing purposes
+                    Array.Copy(terrainGenerator.GenerateWorld(40, 40, "TestWorld"), worldMap, worldMap.Length);
+                    currentGameState = GameState.ViewingWorld;
+
+                    break;
+
+                case GameState.ViewingWorld:
+
                     break;
             }
 
@@ -150,6 +165,10 @@ namespace GraphicalRoguelike
                     spriteBatch.Begin();
                     spriteBatch.DrawString(font, "A game by Samuel Kinnett", new Vector2(Window.ClientBounds.Width / 2 - 120, Window.ClientBounds.Height / 2 - 100), Color.White);
                     spriteBatch.End();
+                    break;
+
+                case(GameState.ViewingWorld):
+                    renderer.RenderWorld(spriteBatch, OverworldTerrain, 40, 40, worldMap);
                     break;
 
                 default:
