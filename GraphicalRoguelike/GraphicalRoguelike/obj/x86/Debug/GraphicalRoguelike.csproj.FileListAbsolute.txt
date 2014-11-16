@@ -14,3 +14,4 @@ C:\Users\Samuel\Documents\GitHub\GraphicalRoguelike\GraphicalRoguelike\Graphical
 C:\Users\Samuel\Documents\GitHub\GraphicalRoguelike\GraphicalRoguelike\GraphicalRoguelike\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Samuel\Documents\GitHub\GraphicalRoguelike\GraphicalRoguelike\GraphicalRoguelike\obj\x86\Debug\GraphicalRoguelike.exe
 C:\Users\Samuel\Documents\GitHub\GraphicalRoguelike\GraphicalRoguelike\GraphicalRoguelike\obj\x86\Debug\GraphicalRoguelike.pdb
+C:\Users\Samuel\Documents\GitHub\GraphicalRoguelike\GraphicalRoguelike\GraphicalRoguelike\bin\x86\Debug\Content\MapSquare.xnb

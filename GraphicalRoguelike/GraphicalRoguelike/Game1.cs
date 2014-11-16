@@ -23,7 +23,8 @@ namespace GraphicalRoguelike
         TerrainGenerator terrainGenerator;
         Rendering renderer;
 
-        Texture2D floor;    //Normal floor tiles
+        Texture2D floor;    //normal floor tiles
+        Texture2D mapSquare; //blank square that is tinted to render the map.
         public int[,] worldMap;
 
         const int testWorldSize = 100; //TESTING
@@ -82,6 +83,8 @@ namespace GraphicalRoguelike
 
             floor = this.Content.Load<Texture2D>("Floor");
             OverworldTerrain = new SpriteSheet(floor, 39, 21);
+
+            mapSquare = this.Content.Load<Texture2D>("MapSquare");
 
             font = this.Content.Load<SpriteFont>("NormalText");
 
@@ -186,8 +189,9 @@ namespace GraphicalRoguelike
                     break;
 
                 case(GameState.ViewingWorld):
-                    GraphicsDevice.Clear(new Color(0, 0, 85));
-                    renderer.RenderWorld(spriteBatch, OverworldTerrain, testWorldSize, testWorldSize, worldMap);
+                    GraphicsDevice.Clear(new Color(0, 0, 110));
+                    //renderer.RenderWorld(spriteBatch, OverworldTerrain, testWorldSize, testWorldSize, worldMap);
+                    renderer.RenderWorld(spriteBatch, mapSquare, testWorldSize, testWorldSize, worldMap);
                     spriteBatch.Begin();
                     spriteBatch.DrawString(font, "This world was generated in " + worldGenerationTime + " milliseconds.", new Vector2(0, 450), Color.White);
                     spriteBatch.End();

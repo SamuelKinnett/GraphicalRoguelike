@@ -19,6 +19,15 @@
       <Output>C:\Users\Samuel\Documents\GitHub\GraphicalRoguelike\GraphicalRoguelike\GraphicalRoguelike\bin\x86\Debug\Content\NormalText.xnb</Output>
       <Time>2014-11-14T15:54:15.12039+00:00</Time>
     </Item>
+    <Item>
+      <Source>MapSquare.jpg</Source>
+      <Name>MapSquare</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Samuel\Documents\GitHub\GraphicalRoguelike\GraphicalRoguelike\GraphicalRoguelike\bin\x86\Debug\Content\MapSquare.xnb</Output>
+      <Time>2014-11-16T12:29:00.1153611+00:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

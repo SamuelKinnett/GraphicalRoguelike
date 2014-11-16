@@ -14,7 +14,7 @@ namespace GraphicalRoguelike
     class Rendering
     {
         //quick renderer for testing purposes
-        public void RenderWorld(SpriteBatch spriteBatch, SpriteSheet spriteSheet, int worldWidth, int worldHeight, int[,] worldMap)
+        public void RenderWorld(SpriteBatch spriteBatch, Texture2D mapSquare, int worldWidth, int worldHeight, int[,] worldMap)
         {
             Color color;
 
@@ -34,8 +34,10 @@ namespace GraphicalRoguelike
                         color = new Color(0, temp * 8, 0);
                     }
 
-                    spriteSheet.Draw(spriteBatch, new Vector2((x * 4) + 20, (y * 4) + 20), 38, color, (float)0.25);
-
+                    //spriteSheet.Draw(spriteBatch, new Vector2((x * 4) + 20, (y * 4) + 20), 38, color, (float)0.25);
+                    spriteBatch.Begin();
+                    spriteBatch.Draw(mapSquare, new Rectangle((x * 4) + 20, (y * 4) + 20, 4, 4), color);
+                    spriteBatch.End();
                 }
             }
         }
