@@ -23,7 +23,7 @@ namespace GraphicalRoguelike
             Random rand = new Random();
 
             //fileManager.CreateWorldFolder(worldName);
-            double landChance = 0.70;
+            double landChance = 0.78;
 
             //fill the heightmap with bedrock (lowest layer)
             Array.Clear(heightMap, 0, heightMap.Length);
@@ -59,7 +59,11 @@ namespace GraphicalRoguelike
 
                             if (neighbourCount >= 5 || neighbourCount == 0)
                             {
-                                temporaryMap[x, y] = 1;
+                                //testing: only fill if less than the random number
+                                if(rand.NextDouble() < landChance && heightMap[x, y] == currentHeightLevel - 1)
+                                {
+                                    temporaryMap[x, y] = 1;
+                                }
                             }
                             else
                             {
