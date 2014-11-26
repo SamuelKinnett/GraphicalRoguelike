@@ -131,7 +131,7 @@ namespace GraphicalRoguelike
 
                     temp = gameTime.TotalGameTime.TotalMilliseconds;
                     //generate world
-                    Array.Copy(terrainGenerator.GenerateWorld(testWorldSize, testWorldSize, "TestWorld", 3, 0.01), worldMap, worldMap.Length);
+                    Array.Copy(terrainGenerator.GenerateWorld(testWorldSize, testWorldSize, "TestWorld", 3, 0.005), worldMap, worldMap.Length);
                     temp2 = gameTime.TotalGameTime.TotalMilliseconds;
 
                     worldGenerationTime = (float)temp2 - (float)temp;
