@@ -126,15 +126,28 @@ namespace GraphicalRoguelike
                 case GameState.GeneratingWorld:
 
                     //testing purposes
-                    double temp;
-                    double temp2; 
+                    double tempMillisecond;
+                    double tempMillisecond2;
+                    double tempSecond;
+                    double tempSecond2;
 
-                    temp = gameTime.TotalGameTime.TotalMilliseconds;
+                    tempMillisecond = System.DateTime.Now.Millisecond;
+                    tempSecond = System.DateTime.Now.Second;
                     //generate world
                     Array.Copy(terrainGenerator.GenerateWorld(testWorldSize, testWorldSize, "TestWorld", 3, 0.005), worldMap, worldMap.Length);
-                    temp2 = gameTime.TotalGameTime.TotalMilliseconds;
+                    tempMillisecond2 = System.DateTime.Now.Millisecond;
+                    tempSecond2 = System.DateTime.Now.Second;
 
-                    worldGenerationTime = (float)temp2 - (float)temp;
+                    worldGenerationTime = ((tempSecond2 - tempSecond) * 1000);
+
+                    if (tempMillisecond2 - tempMillisecond < 0)
+                    {
+                        worldGenerationTime += ((1000 - tempMillisecond) + tempMillisecond2);
+                    }
+                    else
+                    {
+                        worldGenerationTime += tempMillisecond2 - tempMillisecond;
+                    }
 
                     currentGameState = GameState.ViewingWorld;
                     break;
