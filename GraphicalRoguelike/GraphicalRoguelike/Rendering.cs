@@ -42,5 +42,10 @@ namespace GraphicalRoguelike
             }
         }
 
+        public void RenderMenu(SpriteBatch spriteBatch, SpriteSheet menuShip)
+        {
+
+        }
+
     }
 }

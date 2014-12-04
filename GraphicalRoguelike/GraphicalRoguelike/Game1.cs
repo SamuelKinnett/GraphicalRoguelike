@@ -16,15 +16,25 @@ namespace GraphicalRoguelike
     /// </summary>
     public class Game1 : Microsoft.Xna.Framework.Game
     {
+        #region Core Classes
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         SpriteFont font;
-        SpriteSheet OverworldTerrain;   //land, grass etc.
-        TerrainGenerator terrainGenerator;
         Rendering renderer;
+        TerrainGenerator terrainGenerator;
+        #endregion
 
+        #region Textures
         Texture2D floor;    //normal floor tiles
         Texture2D mapSquare; //blank square that is tinted to render the map.
+        Texture2D shipSpriteSheet; //animated ship for the menu
+        #endregion
+
+        #region Spritesheets
+        SpriteSheet OverworldTerrain;   //land, grass etc.
+        SpriteSheet MenuShip; //animated ship for the main menu.
+        #endregion
+
         public int[,] worldMap;
 
         const int testWorldSize = 100; //TESTING
@@ -63,13 +73,12 @@ namespace GraphicalRoguelike
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
             worldMap = new int[testWorldSize, testWorldSize];
 
             terrainGenerator = new TerrainGenerator();
             renderer = new Rendering();
 
-            base.Initialize();
+            base.Initialize(); //don't know what this does, better leave it alone.
         }
 
         /// <summary>
@@ -81,14 +90,21 @@ namespace GraphicalRoguelike
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
+            #region Textures
             floor = this.Content.Load<Texture2D>("Floor");
-            OverworldTerrain = new SpriteSheet(floor, 39, 21);
-
             mapSquare = this.Content.Load<Texture2D>("MapSquare");
+            shipSpriteSheet = this.Content.Load<Texture2D>("MenuShip");
+            #endregion
 
+            #region SpriteSheets
+            OverworldTerrain = new SpriteSheet(floor, 39, 21);
+            MenuShip = new SpriteSheet(shipSpriteSheet, 3, 1);
+            #endregion
+
+            #region fonts
             font = this.Content.Load<SpriteFont>("NormalText");
+            #endregion
 
-            // TODO: use this.Content to load your game content here
         }
 
         /// <summary>
@@ -168,8 +184,6 @@ namespace GraphicalRoguelike
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
-
             /*
             Vector2 tempVector;
             int tempCount = 0;
@@ -193,6 +207,10 @@ namespace GraphicalRoguelike
                     spriteBatch.Begin();
                     spriteBatch.DrawString(font, "A game by Samuel Kinnett", new Vector2(Window.ClientBounds.Width / 2 - 120, Window.ClientBounds.Height / 2 - 100), Color.White);
                     spriteBatch.End();
+                    break;
+
+                case(GameState.MainMenu):
+                    GraphicsDevice.Clear(Color.Black);
                     break;
 
                 case(GameState.GeneratingWorld):
