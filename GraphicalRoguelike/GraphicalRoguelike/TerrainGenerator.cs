@@ -153,7 +153,7 @@ namespace GraphicalRoguelike
                 int tempX = rand.Next(8, worldWidth - 8);
                 int tempY = rand.Next(8, worldHeight - 8);
 
-                probabilityMap[tempX, tempY] = 0.85;
+                probabilityMap[tempX, tempY] = 0.9;
                 computedTiles[tempX, tempY] = true;
             }
 
@@ -191,7 +191,7 @@ namespace GraphicalRoguelike
                 {
                     for (int x = 2; x < worldWidth - 2; x++)
                     {
-                        if (rand.NextDouble() < probabilityMap[x, y] && heightMap[x, y] == currentHeightLevel - 1)
+                        if (rand.NextDouble() < probabilityMap[x, y] - (currentHeightLevel * 0.01) && heightMap[x, y] == currentHeightLevel - 1)
                         {
                             temporaryMap[x, y] = 1;
                         }
