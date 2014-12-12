@@ -1,3 +1,4 @@
 Content\Floor.xnb
 Content\MapSquare.xnb
 Content\NormalText.xnb
+Content\MenuShip.xnb

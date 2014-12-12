@@ -58,7 +58,6 @@ namespace GraphicalRoguelike
             else
             {
                 spriteBatch.Draw(Texture, location, sourceRectangle, color, 0, new Vector2(0, 0), scale, SpriteEffects.None, 0);
-                spriteBatch.Draw(Texture, location, sourceRectangle, color, 0, new Vector2(0, 0), scale, SpriteEffects.None, 0);
             }
             spriteBatch.End();
         }

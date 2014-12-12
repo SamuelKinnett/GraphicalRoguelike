@@ -28,6 +28,15 @@
       <Output>C:\Users\Samuel\Documents\GitHub\GraphicalRoguelike\GraphicalRoguelike\GraphicalRoguelike\bin\x86\Debug\Content\NormalText.xnb</Output>
       <Time>2014-11-25T21:11:45.7459232+00:00</Time>
     </Item>
+    <Item>
+      <Source>MenuShip.png</Source>
+      <Name>MenuShip</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Samuel\Documents\GitHub\GraphicalRoguelike\GraphicalRoguelike\GraphicalRoguelike\bin\x86\Debug\Content\MenuShip.xnb</Output>
+      <Time>2014-12-04T17:41:38.0249539+00:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{A5DE3504-D125-40CE-A748-F2525FE4FE20}</ContentProjectGUID>
